@@ -12,9 +12,7 @@ const Card = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(list);
-
-    if (item != "") {
+    if (item !== "") {
       setList([...list, { id: new Date().getTime().toString(), name: item }]);
       setItem("");
       setValue(true);
@@ -34,7 +32,7 @@ const Card = () => {
 
   const handleDelete = (product) => {
     console.log(product, list);
-    const temp = list.filter((thisOne) => product.id != thisOne.id);
+    const temp = list.filter((thisOne) => product.id !== thisOne.id);
 
     setList(temp);
     setText("Item Deleted");
@@ -49,7 +47,7 @@ const Card = () => {
     e.preventDefault();
 
     var temp = list.map((product) => {
-      if (product.id == edit.id) {
+      if (product.id === edit.id) {
         return { id: product.id, name: item };
       }
 
@@ -77,7 +75,7 @@ const Card = () => {
 
   return (
     <div className="card">
-      {text != "" && <article>{text}</article>}
+      {text !== "" && <article>{text}</article>}
       <h1>Grocery List</h1>
       <form>
         <input
