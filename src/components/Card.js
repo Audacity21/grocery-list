@@ -85,7 +85,7 @@ const Card = () => {
           value={item}
           ref={refContainer}
         />
-        <button type="submit" onClick={edit.name ? editItem : handleSubmit}>
+        <button className= "sub-btn" type="submit" onClick={edit.name ? editItem : handleSubmit}>
           {edit.name ? "Save" : "Submit"}
         </button>
       </form>
@@ -107,7 +107,7 @@ const Card = () => {
             );
           })}
       </div>
-      <div>
+      <div className="clear-items-div">
         <button className="clear-items" onClick={handleClear}>
           Clear Items
         </button>
